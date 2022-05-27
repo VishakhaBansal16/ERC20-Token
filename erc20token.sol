@@ -7,7 +7,7 @@ contract erc20token is ERC20{
         return whitelisted[to];
     }
     constructor() ERC20("Token", "TK") {
-        _mint(msg.sender,  1000 * decimals());
+        _mint(msg.sender,  1000 * 10^decimals());
     }
     function transfer(address to, uint256 amount) public override  returns(bool){       
         if(onlyWhitelist(to))
